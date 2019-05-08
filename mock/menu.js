@@ -1,0 +1,195 @@
+const { config } = require('./common')
+
+const { apiPrefix } = config
+let database = [
+  {
+    id: '1',
+    icon: 'dashboard',
+    name: '首页',
+    route: '/header',
+  },
+  {
+    id: '11',
+    bpid: '1',
+    mpid: '1',
+    name: '系统首页',
+    route: '/header',
+  },
+  {
+    id: '12',
+    bpid: '1',
+    mpid: '1',
+    name: '系统日志',
+    route: '/header/logging',
+  },
+  {
+    id: '2',
+    name: '商户',
+    icon: 'api',
+    route: '/merchant',
+  },
+  {
+    id: '21',
+    bpid: '2',
+    mpid: '2',
+    name: '商户信息详情',
+    route: '/merchant/merchantInfo',
+  },
+  {
+    id: '22',
+    bpid: '2',
+    mpid: '2',
+    name: '商户信息修改',
+    route: '/merchant/changeMerchant',
+  },
+  {
+    id: '23',
+    bpid: '2',
+    mpid: '-1',
+    name: '手机短信验证码',
+    route: '/merchant/changepages/mobileFirst',
+  },
+  {
+    id: '24',
+    bpid: '2',
+    mpid: '-1',
+    name: '邮箱验证码',
+    route: '/merchant/changepages/emilFirst',
+  },
+  {
+    id: '3',
+    name: '用户',
+    icon: 'user',
+    route: '/user',
+  },
+  {
+    id: '31',
+    bpid: '3',
+    mpid: '3',
+    name: '用户列表',
+    route: '/user/userList',
+  },
+  {
+    id: '32',
+    bpid: '3',
+    mpid: '3',
+    name: '用户创建',
+    route: '/user/addUser',
+  },
+  {
+    id: '33',
+    bpid: '3',
+    mpid: '-1',
+    name: '用户详情',
+    route: '/user/userInfo',
+  },
+  {
+    id: '34',
+    bpid: '3',
+    mpid: '-1',
+    name: '编辑用户',
+    route: '/user/editUser',
+  },
+  {
+    id: '4',
+    name: '设备',
+    icon: 'code-o',
+    route: '/device',
+  },
+  {
+    id: '41',
+    bpid: '4',
+    mpid: '4',
+    name: '设备列表',
+    route: '/device/deviceList',
+  },
+  {
+    id: '42',
+    bpid: '4',
+    mpid: '4',
+    name: '添加设备',
+    route: '/device/addDevice',
+  },
+  {
+    id: '43',
+    bpid: '4',
+    mpid: '-1',
+    name: '设备详情',
+    route: '/device/deviceInfo',
+  },
+  {
+    id: '44',
+    bpid: '4',
+    mpid: '-1',
+    name: '编辑设备',
+    route: '/device/editDevice',
+  },
+  {
+    id: '5',
+    name: '节点',
+    icon: 'line-chart',
+    route: '/tags',
+  },
+  {
+    id: '51',
+    bpid: '5',
+    mpid: '5',
+    name: '节点列表',
+    route: '/tags/tagList',
+  },
+  {
+    id: '53',
+    bpid: '5',
+    mpid: '5',
+    name: '节点创建',
+    route: '/tags/addTag',
+  },
+  {
+    id: '54',
+    bpid: '5',
+    mpid: '-1',
+    name: '节点编辑',
+    route: '/tags/editTag',
+  },
+  // {
+  //   id: '6',
+  //   bpid: '1',
+  //   name: 'Test Navigation',
+  //   icon: 'setting',
+  // },
+  // {
+  //   id: '61',
+  //   bpid: '6',
+  //   mpid: '6',
+  //   name: 'Test Navigation1',
+  //   route: '/navigation/navigation1',
+  // },
+  // {
+  //   id: '62',
+  //   bpid: '6',
+  //   mpid: '6',
+  //   name: 'Test Navigation2',
+  //   route: '/navigation/navigation2',
+  // },
+  // {
+  //   id: '621',
+  //   bpid: '62',
+  //   mpid: '62',
+  //   name: 'Test Navigation21',
+  //   route: '/navigation/navigation2/navigation1',
+  // },
+  // {
+  //   id: '622',
+  //   bpid: '62',
+  //   mpid: '62',
+  //   name: 'Test Navigation22',
+  //   route: '/navigation/navigation2/navigation2',
+  // },
+]
+
+module.exports = {
+
+  [`GET ${apiPrefix}/menus`] (req, res) {
+    res.status(200).json(database)
+  },
+}
