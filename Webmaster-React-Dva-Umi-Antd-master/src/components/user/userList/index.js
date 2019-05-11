@@ -58,7 +58,7 @@ class UserListTable extends Component{
             },
             {
               title:'手机号',
-              dataIndex:'mobile',
+              dataIndex:'tel',
               width:'120px'
             },
             {
@@ -76,6 +76,10 @@ class UserListTable extends Component{
             },{
                 title:'护理人员',
                 dataIndex:'nurse',
+                width:'120px',
+            },{
+                title:'登记日期',
+                dataIndex:'date',
                 width:'120px',
             },{
                 title:'操作',

@@ -1,7 +1,7 @@
 import { request, config } from 'utils'
 
 const { api } = config
-const { patientSearch, patientDelete } = api
+const { patientSearch, patientDelete, patientAdd } = api
 
 export function search (data) {
   return request({
@@ -14,6 +14,14 @@ export function search (data) {
 export function userDelete (data) {
   return request({
     url: patientDelete,
+    method: 'post',
+    data,
+  })
+}
+
+export function addUser (data) {
+  return request({
+    url: patientAdd,
     method: 'post',
     data,
   })

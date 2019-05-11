@@ -6,10 +6,13 @@ import PropTypes from 'prop-types'
 import pathToRegexp from 'path-to-regexp'
 import { connect } from 'dva'
 import { Loader, MyLayout } from 'components'
-import { BackTop, Layout } from 'antd'
+import { BackTop, Layout, LocaleProvider } from 'antd'
 import { classnames, config } from 'utils'
 import { Helmet } from 'react-helmet'
 import { withRouter } from 'dva/router'
+import zh_CN from 'antd/lib/locale-provider/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
 import Error from '../pages/404'
 import '../themes/index.less'
 import './app.less'
@@ -17,6 +20,9 @@ import './app.less'
 const { Content, Footer, Sider } = Layout
 const { Header, Bread, styles } = MyLayout
 const { prefix, openPages } = config
+
+
+moment.locale('zh-cn');
 
 let lastHref
 
@@ -91,10 +97,12 @@ const App = ({
   }
 
   return (
+    <LocaleProvider locale={zh_CN}>
     <div>
+      
       <Loader fullScreen spinning={loading.effects['app/query']} />
       <Helmet>
-        <title>ANTD ADMIN</title>
+        <title>智慧养老管理后台</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href={logo} type="image/x-icon" />
         {iconFontJS && <script src={iconFontJS} />}
@@ -121,7 +129,9 @@ const App = ({
           </Footer>
         </Layout>
       </Layout>
+      
     </div>
+    </LocaleProvider>
   )
 }
 
