@@ -24,9 +24,16 @@ let database = [
   },
   {
     id: '2',
-    name: '商户',
+    name: '信息管理',
     icon: 'api',
     route: '/merchant',
+  },
+  {
+    id: '20',
+    bpid: '2',
+    mpid: '2',
+    name: '新增用户档案',
+    route: '/merchant/newUser',
   },
   {
     id: '21',

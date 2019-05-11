@@ -53,10 +53,6 @@ const Login = ({
           <Button type="primary" onClick={handleOk} loading={loading.effects.login}>
             登陆
           </Button>
-          <p>
-            <span>Username：admin</span>
-            <span>Password：admin</span>
-          </p>
         </Row>
 
       </form>

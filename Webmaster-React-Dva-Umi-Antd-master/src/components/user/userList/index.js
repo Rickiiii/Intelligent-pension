@@ -19,16 +19,14 @@ class UserListTable extends Component{
     }
 
     handleEdit=(data)=>{
-        router.push({
-            pathname:'/user/editUser',
-            query:{
-                id:data
-            }
-        })
-                    }
-    handleDel=(data)=>{
-                        console.log(data)
-                            }
+      router.push({
+          pathname:'/user/editUser',
+          query:{
+              id:data
+          }
+      })
+    }
+    handleDel=(id)=>{ this.props.del(id) }
     handleCancel=(data)=>{
         console.log('取消')
     }
@@ -36,47 +34,49 @@ class UserListTable extends Component{
         const {dataSource}=this.props
         const columns=[
             {
-                title:'用户ID',
-                dataIndex:'id',
-                width:'120px'
+              title:'序号',
+              detaIndex: 'No',
+              width: 80,
+              render: (text,record,index) => {
+                return index + 1
+              } 
             },
             {
-                title:'商户名称',
-                dataIndex:'storeName',
-                width:'120px'
+              title:'编号',
+              dataIndex:'id',
+              width:'120px'
             },
             {
-                title:'姓名',
-                dataIndex:'userName',
-                width:'80px'
+              title:'姓名',
+              dataIndex:'userName',
+              width:'120px'
             },
             {
-                title:'手机号',
-                dataIndex:'mobile',
-                width:'120px'
+              title:'年龄',
+              dataIndex:'age',
+              width:'80px'
             },
             {
-                title:'节点权限',
-                dataIndex:'tags',
-                width:'80px',
+              title:'手机号',
+              dataIndex:'mobile',
+              width:'120px'
+            },
+            {
+              title:'性别',
+              dataIndex:'sex',
+              width:'80px',
             },{
-                title:'板块权限',
-                dataIndex:'open',
+                title:'床位',
+                dataIndex:'bed',
                 width:'120px'
             },{
                 title:'备注',
-                dataIndex:'desc',
+                dataIndex:'remark',
                 width:'120px'
             },{
-                title:'账户启用状态',
-                dataIndex:'statue',
+                title:'护理人员',
+                dataIndex:'nurse',
                 width:'120px',
-                render:(text, record, index) => (<div>
-                    <Switch checked={text} onChange={
-                        ()=>{this.onSwitchChange(text)}}/>
-                    </div>)
-                    
-                
             },{
                 title:'操作',
                 width:'150px',
@@ -84,7 +84,7 @@ class UserListTable extends Component{
                         <div>
                             <span onClick={()=>{this.handleLook(record.id)}} className={styles.text}>查看</span>
                             <span onClick={()=>{this.handleEdit(record.id)}} className={styles.text}>编辑</span>
-                            <Popconfirm title="确认要删除吗？" onConfirm={()=>{this.handleDel(record)}} onCancel={()=>{this.handleCancel(record)}} okText="确认" cancelText="取消">
+                            <Popconfirm title="确认要删除吗？" onConfirm={()=>{this.handleDel(record.id)}} onCancel={()=>{this.handleCancel(record)}} okText="确认" cancelText="取消">
 
                             <span className={styles.text}>删除</span></Popconfirm>
                         </div>
@@ -94,7 +94,7 @@ class UserListTable extends Component{
         ]
         return(
             <div>
-                <Table columns={columns} dataSource={dataSource} pagination={false} rowKey={dataSource=>dataSource.id}/>
+                <Table loading={this.props.loading} columns={columns} dataSource={dataSource} pagination={false} rowKey={dataSource=>dataSource.id}/>
             </div>
         )
     }

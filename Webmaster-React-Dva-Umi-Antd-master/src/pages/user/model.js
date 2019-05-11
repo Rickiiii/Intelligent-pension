@@ -1,5 +1,6 @@
 import modelExtend from 'dva-model-extend'
 import { pageModel } from 'utils/model'
+import { search, userDelete } from './service'
 import { message } from 'antd'
 export default modelExtend(pageModel, {
   namespace: 'user',
@@ -37,8 +38,21 @@ export default modelExtend(pageModel, {
       } else {
         throw data
       }
-    }
-    
+    },
+    * search ({payload}, { call }) {
+      const request = yield call(search, payload)
+      const { success, data } = request
+      if (success) {
+        return data
+      }
+    },
+    * userDelete ({payload}, { call }) {
+      const request = yield call(userDelete, payload)
+      const { success, data } = request
+      if (success) {
+        return data
+      }
+    },
   },
   reducers: {
     querySuccess(state, { payload: value }) {

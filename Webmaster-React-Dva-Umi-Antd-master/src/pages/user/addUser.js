@@ -33,8 +33,8 @@ class AddUser extends Component {
         <Page inner>
        <div className={styles.contents}>
             <Form>
-            <FormItem label="商户ID"  {...formItemLayout}>
-						{getFieldDecorator('storeId', {
+            <FormItem label="人员姓名"  {...formItemLayout}>
+						{getFieldDecorator('userName', {
                             initialValue:`${storeId}`,
 							rules: [
 								{
@@ -44,8 +44,8 @@ class AddUser extends Component {
 							],
 						})(<Input disabled/>)}
 			</FormItem>
-            <FormItem label="商户名称"  {...formItemLayout}>
-						{getFieldDecorator('storeName', {
+            <FormItem label="人员性别"  {...formItemLayout}>
+						{getFieldDecorator('sex', {
                             initialValue:`${storeName}`,
 							rules: [
 								{
@@ -55,8 +55,8 @@ class AddUser extends Component {
 							],
 						})(<Input disabled/>)}
 			</FormItem>
-            <FormItem label="用户名称"  {...formItemLayout}>
-						{getFieldDecorator('userName', {
+            <FormItem label="手机号"  {...formItemLayout}>
+						{getFieldDecorator('tel', {
                             initialValue:``,
 							rules: [
 								{
@@ -64,10 +64,10 @@ class AddUser extends Component {
 									whitespace: true,
 								},
 							],
-						})(<Input placeholder="请输入用户名称"/>)}
+						})(<Input placeholder="请输入用户手机号"/>)}
 			</FormItem>
-            <FormItem label="手机号"  {...formItemLayout}>
-						{getFieldDecorator('mobile', {
+            <FormItem label="床位"  {...formItemLayout}>
+						{getFieldDecorator('bed', {
                             initialValue:``,
 							rules: [
 								{
@@ -77,63 +77,31 @@ class AddUser extends Component {
 							],
 						})(<Input placeholder="请输入手机号"/>)}
 			</FormItem>
-            <FormItem label="登陆密码"  {...formItemLayout}>
-						{getFieldDecorator('psw', {
-                            initialValue:``,
-							rules: [
-								{
-									required: true,
-									whitespace: true,
-								},
-							],
-						})(<Input type="password" placeholder="请输入登陆密码"/>)}
-			</FormItem>
-            <FormItem label="确认登陆密码"  {...formItemLayout}>
-						{getFieldDecorator('repsw', {
-                            initialValue:``,
-							rules: [
-								{
-									required: true,
-									whitespace: true,
-								},
-							],
-						})(<Input type="password" placeholder="请输入登陆密码"/>)}
-			</FormItem>
-            <FormItem label="节点权限"  {...formItemLayout}>
-						{getFieldDecorator('tags', {
-                            initialValue:``,
-							rules: [
-								{
-									required: true,
-									whitespace: true,
-								},
-							],
-                        })(<Input/>)}
-			</FormItem>
-            <FormItem label="版块权限"  {...formItemLayout}>
-						{getFieldDecorator('open', {
-                            initialValue:[],
-							rules: [
-								{
-									required: true,
-								},
-							],
-						})(<CheckboxGroup options={options} />)}
-			</FormItem>
             <FormItem label="备注"  {...formItemLayout}>
-						{getFieldDecorator('desc', {
+						{getFieldDecorator('remark', {
                             initialValue:``,
 							rules: [
 								{
-									
+									required: true,
+									whitespace: true,
 								},
 							],
-						})(<TextArea rows={4} placeholder="有什么需要备注的吗"/>)}
+						})(<Input type="password" placeholder="请输入备注"/>)}
+			</FormItem>
+            <FormItem label="护理人员"  {...formItemLayout}>
+						{getFieldDecorator('nurse', {
+                            initialValue:``,
+							rules: [
+								{
+									required: true,
+									whitespace: true,
+								},
+							],
+						})(<Input type="password" placeholder="请输入护理人员名称"/>)}
 			</FormItem>
             </Form>
             <div className={styles.submits}>
                 <Button type="primary" onClick={this.handleSubmit}>提交</Button>
-
             </div>
         </div>
         </Page>
