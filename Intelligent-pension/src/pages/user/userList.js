@@ -1,11 +1,14 @@
 import React,{Component} from 'react'
 import { Page } from 'components'
-import { Row,Col,Button, message } from 'antd'
+import { Row,Col,Button, message, Input } from 'antd'
 import { connect } from 'dva'
 import UserListTable from '../../components/user/userList';
 import styles from './index.less'
 import Paginations from './../../components/pagination'
 import router from 'umi/router'
+
+const Search = Input.Search;
+
 class User extends Component {
     constructor(props){
         super(props)
@@ -35,13 +38,20 @@ class User extends Component {
       })
     }
 
-    fetchData = () => {
+    fetchData = (data) => {
       this.props.dispatch({
         type: 'user/search',
-        payload: {},
+        payload: data,
       }).then((data) => {
         this.setState({dataSource: data})
       })
+    }
+
+    onSearch = (value) => {
+      const payload = {
+        userName: value
+      }
+      this.fetchData(payload)
     }
 
     componentDidMount = () => {
@@ -55,7 +65,8 @@ class User extends Component {
         <div className={styles.header}>
             <Row>
                 <Col span={3} offset={1}><span className={styles.title}>用户列表</span></Col>
-                <Col span={3} offset={22}><div><Button onClick={this.addUser}>创建用户</Button></div></Col>
+                <Col span={3} offset={2}><span><Search onSearch={value => this.onSearch(value)} style={{ width: 200 }}></Search></span></Col>
+                <Col span={3} offset={22}><span><Button onClick={this.addUser}>创建用户</Button></span></Col>
             </Row>
         </div>
         <div className={styles.content}>

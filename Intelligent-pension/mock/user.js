@@ -1,6 +1,7 @@
 const qs = require('qs')
 const Mock = require('mockjs')
 const config = require('../src/utils/config')
+import { message } from 'antd'
 
 const { apiPrefix } = config
 
@@ -103,7 +104,9 @@ module.exports = {
       })
       res.json({ success: true, message: 'Ok' })
     } else {
-      res.status(400).end()
+      message.destroy()
+      message.error('账号或密码错误，请重试')
+      res.json({ success: false, message: '账号或密码错误，请重试' })
     }
   },
 

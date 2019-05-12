@@ -22,7 +22,7 @@ class UserListTable extends Component{
       router.push({
           pathname:'/user/editUser',
           query:{
-              id:data
+              data
           }
       })
     }
@@ -87,7 +87,7 @@ class UserListTable extends Component{
                 render:(text, record, index) => (
                         <div>
                             <span onClick={()=>{this.handleLook(record.id)}} className={styles.text}>查看</span>
-                            <span onClick={()=>{this.handleEdit(record.id)}} className={styles.text}>编辑</span>
+                            <span onClick={()=>{this.handleEdit(record)}} className={styles.text}>编辑</span>
                             <Popconfirm title="确认要删除吗？" onConfirm={()=>{this.handleDel(record.id)}} onCancel={()=>{this.handleCancel(record)}} okText="确认" cancelText="取消">
 
                             <span className={styles.text}>删除</span></Popconfirm>

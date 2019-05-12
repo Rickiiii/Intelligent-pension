@@ -1,7 +1,6 @@
 /* global window */
 /* global document */
 /* global location */
-/* eslint no-restricted-globals: ["error", "event"] */
 
 import { routerRedux } from 'dva/router'
 import { parse } from 'qs'
