@@ -1,6 +1,6 @@
-const { config } = require('./common')
+const { config } = require('./common');
 
-const { apiPrefix } = config
+const { apiPrefix } = config;
 let database = [
   {
     id: '1',
@@ -8,61 +8,68 @@ let database = [
     name: '首页',
     route: '/header',
   },
+  // {
+  //   id: '11',
+  //   bpid: '1',
+  //   mpid: '1',
+  //   name: '系统首页',
+  //   route: '/header',
+  // },
+  // {
+  //   id: '12',
+  //   bpid: '1',
+  //   mpid: '1',
+  //   name: '系统日志',
+  //   route: '/header/logging',
+  // },
   {
-    id: '11',
+    id: '13',
     bpid: '1',
     mpid: '1',
-    name: '系统首页',
-    route: '/header',
+    name: '报表',
+    route: '/header/dailyPaper',
   },
-  {
-    id: '12',
-    bpid: '1',
-    mpid: '1',
-    name: '系统日志',
-    route: '/header/logging',
-  },
-  {
-    id: '2',
-    name: '信息管理',
-    icon: 'api',
-    route: '/merchant',
-  },
-  {
-    id: '20',
-    bpid: '2',
-    mpid: '2',
-    name: '新增用户档案',
-    route: '/merchant/newUser',
-  },
-  {
-    id: '21',
-    bpid: '2',
-    mpid: '2',
-    name: '商户信息详情',
-    route: '/merchant/merchantInfo',
-  },
-  {
-    id: '22',
-    bpid: '2',
-    mpid: '2',
-    name: '商户信息修改',
-    route: '/merchant/changeMerchant',
-  },
-  {
-    id: '23',
-    bpid: '2',
-    mpid: '-1',
-    name: '手机短信验证码',
-    route: '/merchant/changepages/mobileFirst',
-  },
-  {
-    id: '24',
-    bpid: '2',
-    mpid: '-1',
-    name: '邮箱验证码',
-    route: '/merchant/changepages/emilFirst',
-  },
+  // {
+  //   id: '2',
+  //   name: '信息管理',
+  //   icon: 'api',
+  //   route: '/merchant',
+  // },
+  // {
+  //   id: '20',
+  //   bpid: '2',
+  //   mpid: '2',
+  //   name: '新增用户档案',
+  //   route: '/merchant/newUser',
+  // },
+  // {
+  //   id: '21',
+  //   bpid: '2',
+  //   mpid: '2',
+  //   name: '商户信息详情',
+  //   route: '/merchant/merchantInfo',
+  // },
+  // {
+  //   id: '22',
+  //   bpid: '2',
+  //   mpid: '2',
+  //   name: '商户信息修改',
+  //   route: '/merchant/changeMerchant',
+  // },
+  // {
+  //   id: '23',
+  //   bpid: '2',
+  //   mpid: '-1',
+  //   name: '手机短信验证码',
+  //   route: '/merchant/changepages/mobileFirst',
+  // },
+  // {
+  //   id: '24',
+  //   bpid: '2',
+  //   mpid: '-1',
+  //   name: '邮箱验证码',
+  //   route: '/merchant/changepages/emilFirst',
+  // },
   {
     id: '3',
     name: '用户',
@@ -98,66 +105,93 @@ let database = [
     route: '/user/editUser',
   },
   {
-    id: '4',
-    name: '设备',
-    icon: 'code-o',
-    route: '/device',
-  },
-  {
-    id: '41',
-    bpid: '4',
-    mpid: '4',
-    name: '设备列表',
-    route: '/device/deviceList',
-  },
-  {
-    id: '42',
-    bpid: '4',
-    mpid: '4',
-    name: '添加设备',
-    route: '/device/addDevice',
-  },
-  {
-    id: '43',
-    bpid: '4',
-    mpid: '-1',
-    name: '设备详情',
-    route: '/device/deviceInfo',
-  },
-  {
-    id: '44',
-    bpid: '4',
-    mpid: '-1',
-    name: '编辑设备',
-    route: '/device/editDevice',
+    id: '35',
+    bpid: '3',
+    mpid: '3',
+    name: '用户参数图表',
+    route: '/user/userParam',
   },
   {
     id: '5',
-    name: '节点',
-    icon: 'line-chart',
-    route: '/tags',
+    name: '业务管理',
+    icon: 'user',
+    route: '/messageSearch',
   },
   {
-    id: '51',
+    id: '36',
     bpid: '5',
     mpid: '5',
-    name: '节点列表',
-    route: '/tags/tagList',
+    name: '床位管理',
+    route: '/messageSearch/bedManage',
   },
   {
-    id: '53',
+    id: '37',
     bpid: '5',
     mpid: '5',
-    name: '节点创建',
-    route: '/tags/addTag',
-  },
-  {
-    id: '54',
-    bpid: '5',
-    mpid: '-1',
-    name: '节点编辑',
-    route: '/tags/editTag',
-  },
+    name: '结账',
+    route: '/messageSearch/accounts',
+  }
+  // {
+  //   id: '4',
+  //   name: '设备',
+  //   icon: 'code-o',
+  //   route: '/device',
+  // },
+  // {
+  //   id: '41',
+  //   bpid: '4',
+  //   mpid: '4',
+  //   name: '设备列表',
+  //   route: '/device/deviceList',
+  // },
+  // {
+  //   id: '42',
+  //   bpid: '4',
+  //   mpid: '4',
+  //   name: '添加设备',
+  //   route: '/device/addDevice',
+  // },
+  // {
+  //   id: '43',
+  //   bpid: '4',
+  //   mpid: '-1',
+  //   name: '设备详情',
+  //   route: '/device/deviceInfo',
+  // },
+  // {
+  //   id: '44',
+  //   bpid: '4',
+  //   mpid: '-1',
+  //   name: '编辑设备',
+  //   route: '/device/editDevice',
+  // },
+  // {
+  //   id: '5',
+  //   name: '节点',
+  //   icon: 'line-chart',
+  //   route: '/tags',
+  // },
+  // {
+  //   id: '51',
+  //   bpid: '5',
+  //   mpid: '5',
+  //   name: '节点列表',
+  //   route: '/tags/tagList',
+  // },
+  // {
+  //   id: '53',
+  //   bpid: '5',
+  //   mpid: '5',
+  //   name: '节点创建',
+  //   route: '/tags/addTag',
+  // },
+  // {
+  //   id: '54',
+  //   bpid: '5',
+  //   mpid: '-1',
+  //   name: '节点编辑',
+  //   route: '/tags/editTag',
+  // },
   // {
   //   id: '6',
   //   bpid: '1',
@@ -192,11 +226,11 @@ let database = [
   //   name: 'Test Navigation22',
   //   route: '/navigation/navigation2/navigation2',
   // },
-]
+];
 
 module.exports = {
 
-  [`GET ${apiPrefix}/menus`] (req, res) {
-    res.status(200).json(database)
+  [`GET ${apiPrefix}/menus`](req, res) {
+    res.status(200).json(database);
   },
-}
+};

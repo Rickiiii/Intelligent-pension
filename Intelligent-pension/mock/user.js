@@ -1,7 +1,7 @@
-const qs = require('qs')
-const Mock = require('mockjs')
+const qs = require('../node_modules/qs/lib')
+const Mock = require('../node_modules/mockjs/dist/mock')
 const config = require('../src/utils/config')
-import { message } from 'antd'
+import { message } from '../node_modules/antd/lib'
 
 const { apiPrefix } = config
 

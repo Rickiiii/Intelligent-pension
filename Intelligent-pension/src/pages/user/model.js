@@ -1,12 +1,14 @@
 import modelExtend from 'dva-model-extend'
 import { pageModel } from 'utils/model'
-import { search, userDelete, addUser } from './service'
-import { message } from 'antd'
+import {
+  search, userDelete, addUser, pay 
+} from './service'
+
 export default modelExtend(pageModel, {
   namespace: 'user',
   state: {
-    storeId:'0001',
-    storeName:'亦店',
+    storeId: '0001',
+    storeName: '亦店',
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -39,22 +41,30 @@ export default modelExtend(pageModel, {
         throw data
       }
     },
-    * search ({payload}, { call }) {
+    * search({ payload }, { call }) {
       const request = yield call(search, payload)
       const { success, data } = request
       if (success) {
         return data
       }
     },
-    * userDelete ({payload}, { call }) {
+    * userDelete({ payload }, { call }) {
       const request = yield call(userDelete, payload)
       const { success, data } = request
       if (success) {
         return data
       }
     },
-    * addUser ({payload}, { call }) {
+    * addUser({ payload }, { call }) {
       const request = yield call(addUser, payload)
+      const { success, data } = request
+      if (success) {
+        return data
+      }
+    },
+
+    * pay({ payload }, { call }) {
+      const request = yield call(pay, payload)
       const { success, data } = request
       if (success) {
         return data

@@ -1,16 +1,11 @@
 import React,{Component} from 'react'
 import { Page } from 'components'
 import { connect } from 'dva'
-import {Form,Input,Button,Row,Radio,Checkbox} from 'antd'
+import {Form,Input,Button,Radio} from 'antd'
 import styles from './index.less'
 import router from 'umi/router'
 const FormItem=Form.Item
-const CheckboxGroup = Checkbox.Group;
 const RadioGroup = Radio.Group;
-const options = [
-   '管理', '巡店', '客流', 
-  ];
-const { TextArea } = Input;
 class EditUser extends Component {
     constructor(props){
         super(props)

@@ -26,6 +26,7 @@ module.exports = {
     patientSearch: `${APIV1}/patient/search`,
     patientDelete: `${APIV1}/patient/delete`,
     patientAdd: `${APIV1}/patient/add`,
+    patientPay: `${APIV1}/patient/pay`,
     v1test: `${APIV1}/test`,
     v2test: `${APIV2}/test`,
   },

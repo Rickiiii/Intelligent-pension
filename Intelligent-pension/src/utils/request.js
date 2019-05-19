@@ -114,7 +114,6 @@ export default function request (options) {
       msg = error.message || 'Network Error'
     }
 
-    /* eslint-disable */
     return Promise.reject({ success: false, statusCode, message: msg })
   })
 }

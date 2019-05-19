@@ -1,13 +1,14 @@
 import modelExtend from 'dva-model-extend'
 import { pageModel } from 'utils/model'
 import { message } from 'antd'
+
 export default modelExtend(pageModel, {
   namespace: 'header',
   state: {
-   city:'上海',
-   selectDate:'',
-   day:'yester',
-   datePicker:[]
+    city: '王富贵',
+    selectDate: '',
+    day: 'yester',
+    datePicker: []
 
   },
   subscriptions: {
