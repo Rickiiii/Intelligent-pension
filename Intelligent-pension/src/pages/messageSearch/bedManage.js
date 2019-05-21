@@ -82,28 +82,28 @@ const dataTwo = [{
 }];
 
 const dataThr = [{
-  room: '301',
+  room: '101',
   use: 1,
   content: '王富贵（男）占用，剩余一个床位',
   tag: '使用中',
   type: '房型: 双人间',
   price: '收费: 80/晚',
 }, {
-  room: '302',
+  room: '102',
   use: 2,
   content: '房间无人使用',
   tag: '可用',
   type: '房型: 四人间',
   price: '收费: 60/晚',
 }, {
-  room: '303',
+  room: '103',
   use: 3,
   content: '房间正在清扫，无法使用',
   tag: '无法使用',
   type: '房型: 单人间',
   price: '收费: 200/晚',
 }, {
-  room: '304',
+  room: '104',
   use: 1,
   content: '王全喜（男）占用，剩余三个床位',
   tag: '使用中',

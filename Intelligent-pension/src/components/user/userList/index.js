@@ -93,6 +93,7 @@ class UserListTable extends Component {
           width: '150px',
           render: (text, record, index) => (
             <div>
+              <span onClick={() => { this.handleLook(record.id) }} className={styles.text}>查看</span>
               <span onClick={() => { this.handleEdit(record) }} className={styles.text}>编辑</span>
               <Popconfirm title="确认要删除吗？" onConfirm={() => { this.handleDel(record.id) }} onCancel={() => { this.handleCancel(record) }} okText="确认" cancelText="取消">
 

@@ -2,7 +2,7 @@ import { request, config } from 'utils'
 
 const { api } = config
 const {
-  patientSearch, patientDelete, patientAdd, patientPay, patientEdit
+  patientSearch, patientDelete, patientAdd, patientPay 
 } = api
 
 export function search(data) {
@@ -32,14 +32,6 @@ export function addUser(data) {
 export function pay(data) {
   return request({
     url: patientPay,
-    method: 'post',
-    data,
-  })
-}
-
-export function edit(data) {
-  return request({
-    url: patientEdit,
     method: 'post',
     data,
   })

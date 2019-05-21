@@ -106,7 +106,7 @@ class Header extends Component {
     }
 
     render() {
-      const { today, date } = this.state
+      const { today } = this.state
       const { city, day } = this.props.header
 
       return (
@@ -122,13 +122,12 @@ class Header extends Component {
                   <div className={styles.selectDate} id="selectDate">
                     <LocaleProvider locale={zh_CN}>
                       <RangePicker 
-                        onChange={this.onChangePicker}
-                        value={date}
+                        onChange={this.onChangePicker} 
                       />
                     </LocaleProvider>
                   </div>
+
                 </Col>
-                123
               </Row>
             </div>
             <div />

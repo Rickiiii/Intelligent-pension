@@ -72,17 +72,6 @@ module.exports = {
     dataSource = returnData
     res.json({ success: true, message: 'Ok', data: [] })
   },  
-  [`POST ${apiPrefix}/patient/edit`](req, res) {
-    const { id } = req.body
-    const returnData = dataSource.map((item) => {
-      if (item.id === id) {
-        item = req.body
-      }
-      return item
-    })
-    dataSource = returnData
-    res.json({ success: true, message: 'Ok', data: [] })
-  },  
   [`POST ${apiPrefix}/patient/add`](req, res) {
     const lastId = dataSource[dataSource.length - 1].id
     const pre = lastId.slice(0, 2)

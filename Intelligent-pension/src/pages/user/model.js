@@ -1,12 +1,14 @@
 import modelExtend from 'dva-model-extend'
 import { pageModel } from 'utils/model'
 import {
-  search, userDelete, addUser, pay, edit
+  search, userDelete, addUser, pay 
 } from './service'
 
 export default modelExtend(pageModel, {
   namespace: 'user',
   state: {
+    storeId: '0001',
+    storeName: '亦店',
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -63,14 +65,6 @@ export default modelExtend(pageModel, {
 
     * pay({ payload }, { call }) {
       const request = yield call(pay, payload)
-      const { success, data } = request
-      if (success) {
-        return data
-      }
-    },
-
-    * edit({ payload }, { call }) {
-      const request = yield call(edit, payload)
       const { success, data } = request
       if (success) {
         return data
